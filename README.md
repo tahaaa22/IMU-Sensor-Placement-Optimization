@@ -137,20 +137,6 @@ python main.py --help
 - `resampling()`: Resample data to different sampling frequencies
 - `comparisons_tool()`: Main comparison workflow
 
-## File Structure
-
-```
-IMU-Sensor-Placement-Optimization/
-├── main.py                          # Main application entry point
-├── imu_import.py                    # Data import functionality
-├── calibration.py                   # Sensor calibration
-├── euler_angle_calculations.py      # Joint angle calculations
-├── comparisons_tool.py              # Comparison with optical data
-├── requirements.txt                 # Python dependencies
-├── README_Python.md                 # This file
-└── README.md                        # Original MATLAB documentation
-```
-
 ## Data Format
 
 ### Input Data
@@ -185,72 +171,9 @@ YXZ rotation order for joint angle calculation:
 ### Drift Correction
 Linear drift correction between flat foot instances during gait analysis.
 
-## Troubleshooting
-
-### Common Issues
-
-1. **Missing Dependencies**
-   ```
-   pip install -r requirements.txt
-   ```
-
-2. **File Format Issues**
-   - Ensure IMU text files are tab-separated
-   - Check that subject information files are valid MATLAB .mat format
-
-3. **GUI Issues**
-   - Use command line interface: `python main.py --cli`
-   - Check tkinter installation
-
-4. **Data Loading Issues**
-   - Verify file paths and permissions
-   - Check file format compatibility
-
-### Performance Notes
-
-- Large datasets may require significant memory
-- Consider processing data in chunks for very long recordings
-- Use command line interface for batch processing
-
-## Differences from MATLAB Version
-
-### Advantages of Python Implementation
-
-1. **Open Source**: No license required
-2. **Cross-Platform**: Runs on Windows, macOS, and Linux
-3. **Modern Libraries**: Uses scikit-learn for PCA, scipy for signal processing
-4. **Better Error Handling**: More robust error messages and recovery
-5. **Extensible**: Easy to add new features and algorithms
-
 ### Implementation Notes
 
 - Uses `scipy.io` for MATLAB file compatibility
 - `pandas` for data import and manipulation
 - `matplotlib` for plotting (equivalent to MATLAB plotting)
 - `scikit-learn` for PCA (equivalent to MATLAB's pca function)
-
-## Contributing
-
-To extend or modify this implementation:
-
-1. Follow the existing code structure
-2. Add type hints for better code documentation
-3. Include docstrings for all functions
-4. Test with sample data before deployment
-
-## Citation
-
-If you use this Python implementation, please cite the original MATLAB work:
-
-```
-Niswander, W., Wang, W., & Kontson, K. (2020). Optimization of IMU Sensor Placement 
-for the Measurement of Lower Limb Joint Kinematics. Sensors, 20(24), 7153.
-```
-
-## License
-
-This Python implementation is provided as-is for research and educational purposes. Please refer to the original MATLAB codebase for licensing information.
-
-## Support
-
-For issues specific to this Python implementation, please check the troubleshooting section above. For questions about the underlying algorithms, refer to the original MATLAB documentation and research paper.
